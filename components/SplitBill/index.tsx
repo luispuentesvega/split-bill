@@ -1,3 +1,4 @@
-import SplitBill from "./SplitBill";
+import Items from "./Items";
+import Summary from "./Summary";
 
-export default SplitBill;
+export { Summary, Items };

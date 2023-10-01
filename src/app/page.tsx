@@ -3,8 +3,7 @@
 import { useState } from "react";
 
 import { Flex, Heading } from "@chakra-ui/react";
-import Items from "../../components/SplitBill/Items";
-import Summary from "../../components/SplitBill/Summary";
+import { Items, Summary } from "../../components/SplitBill";
 
 export default function Home() {
   const [items, setItems] = useState([""]);
