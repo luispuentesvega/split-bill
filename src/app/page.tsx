@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { Flex, Heading } from "@chakra-ui/react";
 import Items from "../../components/SplitBill/Items";
+import Summary from "../../components/SplitBill/Summary";
 
 export default function Home() {
   const [items, setItems] = useState([""]);
@@ -30,6 +31,7 @@ export default function Home() {
           addItem={addItem}
           removeItem={removeItem}
         />
+        <Summary items={items} />
       </Flex>
     </Flex>
   );
