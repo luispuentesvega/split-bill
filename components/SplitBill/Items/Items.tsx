@@ -16,6 +16,7 @@ const Items = (itemProps: ItemsProps) => {
       {items.map((item, index) => (
         <ListItem key={index} display="flex" mb={2}>
           <Input
+            type="number"
             value={item}
             onChange={(e) => {
               const value = e.target.value;
