@@ -1,4 +1,4 @@
-import { Divider, Heading, Text } from "@chakra-ui/react";
+import { Box, Divider, Heading, Text } from "@chakra-ui/react";
 
 const THB = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -18,15 +18,15 @@ const Summary = (props: SummaryProps) => {
   const total = subTotal + service + vat;
 
   return (
-    <>
+    <Box ml={4}>
       <Text fontSize="md">Subtotal: {subTotal.toFixed(2)}</Text>
       <Text fontSize="md">Service Charge 5%: {service.toFixed(2)}</Text>
       <Text fontSize="md">Vat 7%: {vat.toFixed(2)}</Text>
-      <Divider />
+      <Divider color="purple.900" />
       <Heading as="h1" size="md" mt={3}>
         Total: {THB.format(total)}
       </Heading>
-    </>
+    </Box>
   );
 };
 
