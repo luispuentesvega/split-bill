@@ -10,8 +10,8 @@ type ItemsProps = {
   reset: () => void;
 };
 
-const Items = (itemProps: ItemsProps) => {
-  const { items, setItems, addItem, removeItem, reset } = itemProps;
+const Items = (props: ItemsProps) => {
+  const { items, setItems, addItem, removeItem, reset } = props;
 
   const handleChange = (index: number) => {
     return (e: ChangeEvent<HTMLInputElement>) => {
