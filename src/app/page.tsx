@@ -19,6 +19,10 @@ export default function Home() {
     setItems(newItems);
   };
 
+  const reset = () => {
+    setItems([""]);
+  };
+
   return (
     <Flex justify="center" alignItems="center" mt={10}>
       <Flex flexDir="column" w={350} border={1} borderColor={"red"}>
@@ -30,6 +34,7 @@ export default function Home() {
           setItems={setItems}
           addItem={addItem}
           removeItem={removeItem}
+          reset={reset}
         />
         <Summary items={items} />
       </Flex>

@@ -1,15 +1,17 @@
 import { OrderedList, ListItem, Button, Input } from "@chakra-ui/react";
 import { Dispatch, SetStateAction } from "react";
+import { AddIcon, DeleteIcon } from "@chakra-ui/icons";
 
 type ItemsProps = {
   items: string[];
   setItems: Dispatch<SetStateAction<string[]>>;
   addItem: () => void;
   removeItem: (index: number) => void;
+  reset: () => void;
 };
 
 const Items = (itemProps: ItemsProps) => {
-  const { items, setItems, addItem, removeItem } = itemProps;
+  const { items, setItems, addItem, removeItem, reset } = itemProps;
 
   return (
     <OrderedList>
@@ -38,7 +40,7 @@ const Items = (itemProps: ItemsProps) => {
               size="sm"
               ml={1}
             >
-              +
+              <AddIcon />
             </Button>
           ) : (
             <Button
@@ -48,11 +50,21 @@ const Items = (itemProps: ItemsProps) => {
               size="sm"
               ml={1}
             >
-              -
+              <DeleteIcon />
             </Button>
           )}
         </ListItem>
       ))}
+      <Button
+        colorScheme="green"
+        variant="outline"
+        onClick={reset}
+        size="sm"
+        ml={1}
+        alignSelf="end"
+      >
+        Reset
+      </Button>
     </OrderedList>
   );
 };
