@@ -55,16 +55,18 @@ const Items = (itemProps: ItemsProps) => {
           )}
         </ListItem>
       ))}
-      <Button
-        colorScheme="green"
-        variant="outline"
-        onClick={reset}
-        size="sm"
-        ml={1}
-        alignSelf="end"
-      >
-        Reset
-      </Button>
+      {items.length > 1 && (
+        <Button
+          colorScheme="green"
+          variant="outline"
+          onClick={reset}
+          size="sm"
+          ml={1}
+          alignSelf="end"
+        >
+          Reset
+        </Button>
+      )}
     </OrderedList>
   );
 };
