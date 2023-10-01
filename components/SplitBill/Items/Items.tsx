@@ -1,5 +1,11 @@
 import { OrderedList, ListItem, Button, Input } from "@chakra-ui/react";
-import { ChangeEvent, Dispatch, SetStateAction } from "react";
+import {
+  ChangeEvent,
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useRef
+} from "react";
 import { AddIcon, DeleteIcon } from "@chakra-ui/icons";
 
 type ItemsProps = {
@@ -13,6 +19,8 @@ type ItemsProps = {
 const Items = (props: ItemsProps) => {
   const { items, setItems, addItem, removeItem, reset } = props;
 
+  const inputRef = useRef<HTMLInputElement>(null);
+
   const handleChange = (index: number) => {
     return (e: ChangeEvent<HTMLInputElement>) => {
       const value = e.target.value;
@@ -24,11 +32,16 @@ const Items = (props: ItemsProps) => {
     };
   };
 
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
+
   return (
     <OrderedList>
       {items.map((item, index) => (
         <ListItem key={index} display="flex" mb={2}>
           <Input
+            ref={index === 0 ? inputRef : undefined}
             type="number"
             value={item}
             onChange={handleChange(index)}
