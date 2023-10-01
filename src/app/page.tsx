@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <Flex justify="center" alignItems="center" mt={10}>
-      <Flex flexDir="column" w={350} border={1} borderColor={"red"}>
+      <Flex flexDir="column" w={350}>
         <Heading textAlign="center" mb={8}>
           Split the Bill 💸
         </Heading>
