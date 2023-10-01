@@ -8,9 +8,6 @@ test("loads and display Items component", () => {
   // arrange
   render(<Summary items={ITEMS} />);
 
-  // act
-  const subtotalElement = screen.getByText(/Subtotal/i);
-
   // assert
-  expect(subtotalElement.textContent).toEqual("Subtotal: 1500.00");
+  expect(screen.getByText(/Subtotal/i)).toHaveTextContent("Subtotal: 1500.00");
 });

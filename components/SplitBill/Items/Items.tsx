@@ -43,6 +43,7 @@ const Items = (props: ItemsProps) => {
           <Input
             ref={index === 0 ? inputRef : undefined}
             type="number"
+            aria-label={`item-${index}`}
             value={item}
             onChange={handleChange(index)}
             placeholder={`Price Item ${index + 1}`}
@@ -51,6 +52,7 @@ const Items = (props: ItemsProps) => {
           />
           {items.length === index + 1 ? (
             <Button
+              aria-label={`add-${index}`}
               colorScheme="blue"
               variant="outline"
               onClick={addItem}
