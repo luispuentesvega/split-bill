@@ -21,7 +21,7 @@ const Summary = (props: SummaryProps) => {
     <Box ml={4}>
       <Text fontSize="md">Subtotal: {subTotal.toFixed(2)}</Text>
       <Text fontSize="md">Service Charge 5%: {service.toFixed(2)}</Text>
-      <Text fontSize="md">Vat 7%: {vat.toFixed(2)}</Text>
+      <Text fontSize="md">VAT 7%: {vat.toFixed(2)}</Text>
       <Divider color="purple.900" />
       <Heading as="h1" size="md" mt={3}>
         Total: {THB.format(total)}

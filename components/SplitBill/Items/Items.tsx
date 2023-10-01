@@ -1,5 +1,5 @@
 import { OrderedList, ListItem, Button, Input } from "@chakra-ui/react";
-import { Dispatch, SetStateAction } from "react";
+import { ChangeEvent, Dispatch, SetStateAction } from "react";
 import { AddIcon, DeleteIcon } from "@chakra-ui/icons";
 
 type ItemsProps = {
@@ -13,6 +13,17 @@ type ItemsProps = {
 const Items = (itemProps: ItemsProps) => {
   const { items, setItems, addItem, removeItem, reset } = itemProps;
 
+  const handleChange = (index: number) => {
+    return (e: ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value;
+      setItems((prev) => {
+        const tmpItems = [...prev];
+        tmpItems[index] = value;
+        return tmpItems;
+      });
+    };
+  };
+
   return (
     <OrderedList>
       {items.map((item, index) => (
@@ -20,14 +31,7 @@ const Items = (itemProps: ItemsProps) => {
           <Input
             type="number"
             value={item}
-            onChange={(e) => {
-              const value = e.target.value;
-              setItems((prev) => {
-                const tmp = [...prev];
-                tmp[index] = value;
-                return tmp;
-              });
-            }}
+            onChange={handleChange(index)}
             placeholder={`Price Item ${index + 1}`}
             size="sm"
             w={250}
