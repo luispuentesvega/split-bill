@@ -1,4 +1,4 @@
-This web application facilitates speedy bill splitting while automatically calculating service charges and VAT [https://split-bill-th.vercel.app/] (click here).
+This web application facilitates speedy bill splitting while automatically calculating service charges and VAT [click here](https://split-bill-th.vercel.app/).
 
 <img width="416" alt="image" src="https://github.com/luispuentesvega/split-bill/assets/5620082/c70977b4-4c81-4661-82fa-11c2bb2211a0">
 
