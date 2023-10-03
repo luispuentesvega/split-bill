@@ -37,7 +37,7 @@ const Items = (props: ItemsProps) => {
   }, []);
 
   return (
-    <OrderedList>
+    <OrderedList ml={0}>
       {items.map((item, index) => (
         <ListItem key={index} display="flex" mb={2}>
           <Input
@@ -48,7 +48,7 @@ const Items = (props: ItemsProps) => {
             onChange={handleChange(index)}
             placeholder={`Price Item ${index + 1}`}
             size="sm"
-            w={250}
+            w={220}
           />
           {items.length === index + 1 ? (
             <Button
@@ -80,7 +80,6 @@ const Items = (props: ItemsProps) => {
           variant="outline"
           onClick={reset}
           size="sm"
-          ml={1}
           alignSelf="end"
         >
           Reset
