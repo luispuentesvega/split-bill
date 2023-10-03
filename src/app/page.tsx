@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { Flex, Heading } from "@chakra-ui/react";
+import { Flex, Heading, Divider } from "@chakra-ui/react";
 import { Items, Summary } from "../../components/SplitBill";
 
 export default function Home() {
@@ -24,7 +24,7 @@ export default function Home() {
 
   return (
     <Flex justify="center" alignItems="center" mt={10}>
-      <Flex flexDir="column" w={350}>
+      <Flex flexDir="column">
         <Heading textAlign="center" mb={8}>
           Split the Bill 💸
         </Heading>
@@ -35,6 +35,7 @@ export default function Home() {
           removeItem={removeItem}
           reset={reset}
         />
+        <Divider color="purple.900" my={2} />
         <Summary items={items} />
       </Flex>
     </Flex>
